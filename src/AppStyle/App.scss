@@ -4,10 +4,41 @@
     box-sizing: border-box;
 }
 .appBody{
+    height: 300vh;
     .firstSecreen{
         height: 100vh;
+        background: url('https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038');
         background-repeat: no-repeat;
         background-size: cover;
-        background: url('https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038');
+        position: relative;
+        .text{
+            position: absolute;
+            bottom: 25vh;
+            left: 10vw;
+            width: 40vw;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            grid-gap: 30px;
+            align-items: flex-start;
+            color: white;
+            h1{
+                color: yellow;
+            }
+            p{
+                font-size: 18px;
+                text-shadow: 1px 1px 5px black;
+            }
+            button{
+                font-size: 18px;
+                padding: 10px 20px;
+                display: flex;
+                grid-gap: 10px;
+                cursor: pointer;
+                &:hover{
+                    opacity: .8;
+                }
+            }
+        }
     }
 }

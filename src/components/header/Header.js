@@ -3,7 +3,10 @@ import './headerStyle/headerStyle.css'
 
 export default function Header() {
     let [notificationActive, setNotificationActive] = useState(false)
+    let [isBrowseOpen, setIsBrowseOpen] = useState(false)
     let closeAll = useRef()
+    let headerRef = useRef()
+    let navigationRef = useRef()
     let data = [
         {
             img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
@@ -29,15 +32,40 @@ export default function Header() {
     }
     let closeAllFun = () => {
         setNotificationActive(false)
+        if(window.innerWidth <= 700){
+            setIsBrowseOpen(false)
+            navigationRef.current.style.cssText += 'display: none'
+        }
         closeAll.current.style.cssText = 'display: none'
     }
+
+    let toggleMobileBrowse = () => {
+        if(isBrowseOpen){
+            closeAll.current.style.cssText = 'display: none'
+            navigationRef.current.style.cssText += 'display: none'
+        }
+        else{
+            navigationRef.current.style.cssText += 'display: flex'
+            closeAll.current.style.cssText = 'display: block'    
+        }
+        setIsBrowseOpen(!isBrowseOpen)
+    }
+    window.addEventListener("scroll", ()=>{
+        if(window.scrollY >= 100){
+            headerRef.current.style.cssText += "background-color: black; color: white"
+        }
+        else{
+            headerRef.current.style.cssText += "background-color: transparent; color: black"
+        }
+    })
      
-  return (
-    <div className='header'>
+  return (<div className="bigHeaderDiv">
+    <div ref={headerRef} className='header'>
         <div ref={closeAll} onClick={closeAllFun} className="closeAll"></div>
         <div className="first">
             <img className='logo' src="netflix-logo.png" alt="" />
-            <ul>
+            <p onClick={toggleMobileBrowse} className='mobileBrowse'>Browse <i className={ isBrowseOpen ? "fa fa-caret-down" : "fa fa-caret-up"} aria-hidden="true"></i></p>
+            <ul ref={navigationRef}>
                 <li>HOME</li>
                 <li>TV SHOWS</li>
                 <li>MOVIES</li>
@@ -65,5 +93,5 @@ export default function Header() {
             </div>
         </div>
     </div>
-  )
+  </div>)
 }

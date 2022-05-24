@@ -1,15 +1,23 @@
+.bigHeaderDiv{
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
 .header{
     position: absolute;
-    width: 100vw;
+    z-index: 5;
+    width: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 5vw;
+    padding: 15px 5vw;
     .closeAll{
         position: absolute;
         left: 0;
         top: 0;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         background-color: black;
         z-index: 2;
@@ -21,7 +29,12 @@
         display: flex;
         align-items: center;
         grid-gap: 30px;
-        max-width: 45vw;
+        .mobileBrowse{
+            // font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: none;
+        }
         .logo{
             height: 30px;
             cursor: pointer;
@@ -35,6 +48,7 @@
             display: flex;
             li{
                 cursor: pointer;
+                text-shadow: 1px 1px 10px white;
                 font-weight: 600;
                 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 &:hover{
@@ -51,7 +65,6 @@
         i{
             font-size: 20px;
             cursor: pointer;
-            // color: white;
         }
         .search{
             color: white;
@@ -72,7 +85,7 @@
                 &:focus{
                     margin-left: 5px;
                     outline: none;
-                    width: 200px;
+                    width: 100px;
                     opacity: 1;
                     padding: 5px;
                 }
@@ -116,3 +129,74 @@
         }
     }
 }
+@media only screen and (max-width: 700px) {
+    .header{
+        .first{
+            position: relative;
+            grid-gap: 10px;
+            .mobileBrowse{
+                display: block;
+            }
+            ul{
+                position: absolute;
+                top: 50px;
+                left: 10vw;
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 0;
+                width: 200px;
+                color: white;
+                text-shadow: 0px 0px 0px transparent;
+                background-color: black;
+                display: none;
+                grid-gap: 0;
+                z-index: 3;
+                li{
+                    text-shadow: none;
+                    width: 100%;
+                    padding: 10px 0;
+                    &:hover{
+                        opacity: .8;
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    .header{
+        padding: 15px 2vw;
+        .first{
+            .logo{
+                height: 25px;
+            }
+        }
+        .second{
+            grid-gap: 10px;
+            .search{
+                padding: 5px;
+                input:focus{
+                    position: absolute;
+                    z-index: 3;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    padding: 5px;
+                }
+            }
+            .notifications{
+                .openNotification{
+                    max-width: 90vw;
+                    right: 0px;
+                    left: unset;
+                    &>div{
+                        img{
+                            max-width: 30vw;
+                            height: unset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }
