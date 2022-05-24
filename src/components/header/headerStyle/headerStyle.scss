@@ -1,0 +1,118 @@
+.header{
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5vw;
+    .closeAll{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        z-index: 2;
+        opacity: .3;
+        display: none;
+    }
+    .first{
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        grid-gap: 30px;
+        max-width: 45vw;
+        .logo{
+            height: 30px;
+            cursor: pointer;
+            &:hover{
+                opacity: .9;
+            }
+        }
+        ul{
+            grid-gap: 15px;
+            list-style: none;
+            display: flex;
+            li{
+                cursor: pointer;
+                font-weight: 600;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+    .second{
+        display: flex;
+        align-items: center;    
+        grid-gap: 20px;   
+        max-width: 45vw;     
+        i{
+            font-size: 20px;
+            cursor: pointer;
+            // color: white;
+        }
+        .search{
+            color: white;
+            padding: 10px;
+            border: 1px solid white;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            input{
+                color: white;
+                width: 0;
+                border: none;
+                opacity: 0;
+                transition: all 0.5s;
+                background-color: black;
+                &:focus{
+                    margin-left: 5px;
+                    outline: none;
+                    width: 200px;
+                    opacity: 1;
+                    padding: 5px;
+                }
+            }
+        }
+        .notifications{
+            position: relative;
+            .openNotification{
+                z-index: 3;
+                position: absolute;
+                left: -380px;
+                top: 40px;
+                background-color: black;
+                width: 400px;
+                min-height: 30px;
+                max-height: 200px;
+                overflow-x: auto;
+                padding: 10px;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                grid-gap: 20px;
+                &>div{
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    height: 80px;
+                    grid-gap: 30px;
+                    &:hover{
+                        opacity: .8;
+                        background-color: rgba(128, 128, 128, 0.2);
+                    }
+                    img{
+                        height: 80px;
+                    }
+                }
+            }
+            .closedNotification{
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,167 @@
+.header {
+  position: absolute;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 5vw;
+}
+
+.header .closeAll {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 2;
+  opacity: .3;
+  display: none;
+}
+
+.header .first {
+  font-size: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 30px;
+  max-width: 45vw;
+}
+
+.header .first .logo {
+  height: 30px;
+  cursor: pointer;
+}
+
+.header .first .logo:hover {
+  opacity: .9;
+}
+
+.header .first ul {
+  grid-gap: 15px;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .first ul li {
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header .first ul li:hover {
+  opacity: 0.8;
+}
+
+.header .second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 20px;
+  max-width: 45vw;
+}
+
+.header .second i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.header .second .search {
+  color: white;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .second .search input {
+  color: white;
+  width: 0;
+  border: none;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: black;
+}
+
+.header .second .search input:focus {
+  margin-left: 5px;
+  outline: none;
+  width: 200px;
+  opacity: 1;
+  padding: 5px;
+}
+
+.header .second .notifications {
+  position: relative;
+}
+
+.header .second .notifications .openNotification {
+  z-index: 3;
+  position: absolute;
+  left: -380px;
+  top: 40px;
+  background-color: black;
+  width: 400px;
+  min-height: 30px;
+  max-height: 200px;
+  overflow-x: auto;
+  padding: 10px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-gap: 20px;
+}
+
+.header .second .notifications .openNotification > div {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+  grid-gap: 30px;
+}
+
+.header .second .notifications .openNotification > div:hover {
+  opacity: .8;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.header .second .notifications .openNotification > div img {
+  height: 80px;
+}
+
+.header .second .notifications .closedNotification {
+  display: none;
+}
+/*# sourceMappingURL=headerStyle.css.map */
