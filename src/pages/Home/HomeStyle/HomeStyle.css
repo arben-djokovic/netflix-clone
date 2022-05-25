@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.swiper-pagination-horizontal {
+  bottom: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+.appBody {
+  height: 300vh;
+}
+
+.appBody .firstSecreen {
+  height: 100vh;
+  background: url("https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.appBody .firstSecreen .text {
+  position: absolute;
+  bottom: 25vh;
+  left: 10vw;
+  width: 40vw;
+  min-width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-gap: 30px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: white;
+}
+
+.appBody .firstSecreen .text h1 {
+  color: yellow;
+}
+
+.appBody .firstSecreen .text p {
+  font-size: 18px;
+  text-shadow: 1px 1px 5px black;
+}
+
+.appBody .firstSecreen .text button {
+  font-size: 18px;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 10px;
+  cursor: pointer;
+}
+
+.appBody .firstSecreen .text button:hover {
+  opacity: .8;
+}
+
+.appBody .secondScreen {
+  margin-top: 70px;
+}
+
+.appBody .secondScreen h2 {
+  margin-left: 30px;
+  color: white;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper {
+  margin: 20px;
+  height: 150px;
+  overflow: visible;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie {
+  height: 100px;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie:hover {
+  cursor: pointer;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie img {
+  width: 19vw;
+  pointer-events: none;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie .info {
+  display: none;
+  color: white;
+  width: 90%;
+  margin-top: 10px;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie .info p {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie .info .onHover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie .info .onHover i {
+  padding: 10px 12px;
+  background-color: #242424;
+  color: white;
+  border-radius: 50%;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie .info .onHover i:hover {
+  opacity: .8;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie:hover {
+  height: 210px;
+  background-color: black;
+  z-index: 5;
+  padding: 20px 0;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie:hover .info {
+  display: block;
+}
+/*# sourceMappingURL=HomeStyle.css.map */

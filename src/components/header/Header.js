@@ -1,7 +1,9 @@
 import React, { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './headerStyle/headerStyle.css'
 
 export default function Header() {
+    const navigate = useNavigate()
     let [notificationActive, setNotificationActive] = useState(false)
     let [isBrowseOpen, setIsBrowseOpen] = useState(false)
     let closeAll = useRef()
@@ -51,11 +53,11 @@ export default function Header() {
         setIsBrowseOpen(!isBrowseOpen)
     }
     window.addEventListener("scroll", ()=>{
-        if(window.scrollY >= 100){
+        if(window.scrollY >= 50){
             headerRef.current.style.cssText += "background-color: black; color: white"
         }
         else{
-            headerRef.current.style.cssText += "background-color: transparent; color: black"
+            headerRef.current.style.cssText += "background-color: rgba(0,0,0,0.15); color: black"
         }
     })
      
@@ -63,14 +65,14 @@ export default function Header() {
     <div ref={headerRef} className='header'>
         <div ref={closeAll} onClick={closeAllFun} className="closeAll"></div>
         <div className="first">
-            <img className='logo' src="netflix-logo.png" alt="" />
+            <img  onClick={()=>{navigate('/')}} className='logo' src="netflix-logo.png" alt="" />
             <p onClick={toggleMobileBrowse} className='mobileBrowse'>Browse <i className={ isBrowseOpen ? "fa fa-caret-down" : "fa fa-caret-up"} aria-hidden="true"></i></p>
             <ul ref={navigationRef}>
-                <li>HOME</li>
-                <li>TV SHOWS</li>
-                <li>MOVIES</li>
-                <li>LATEST</li>
-                <li>MY LIST</li>
+                <li onClick={()=>{navigate('/')}}>HOME</li>
+                <li onClick={()=>{navigate('/tv-shows')}}>TV SHOWS</li>
+                <li onClick={()=>{navigate('/movies')}}>MOVIES</li>
+                <li onClick={()=>{navigate('/latest')}}>LATEST</li>
+                <li onClick={()=>{navigate('/my-list')}}>MY LIST</li>
             </ul>
         </div>
         <div className="second">

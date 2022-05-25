@@ -4,6 +4,7 @@
     z-index: 5;
 }
 .header{
+    background-color: rgba(0,0,0,0.15);
     position: absolute;
     z-index: 5;
     width: 100%;
@@ -34,6 +35,7 @@
             font-weight: bold;
             cursor: pointer;
             display: none;
+            background-color: rgba(255, 255, 255, 0.05);
         }
         .logo{
             height: 30px;
@@ -48,8 +50,9 @@
             display: flex;
             li{
                 cursor: pointer;
-                text-shadow: 1px 1px 10px white;
+                text-shadow: 1px 1px 10px black;
                 font-weight: 600;
+                color: white;
                 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 &:hover{
                     opacity: 0.8;
@@ -108,6 +111,9 @@
                 display: flex;
                 flex-direction: column;
                 grid-gap: 20px;
+                i{
+                    box-shadow: 1px 1px 1px white;
+                }
                 &>div{
                     cursor: pointer;
                     display: flex;
