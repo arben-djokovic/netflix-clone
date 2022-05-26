@@ -3,60 +3,16 @@ import Header from '../../components/header/Header';
 import './HomeStyle/HomeStyle.css'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
+import Footer from '../../components/footer/Footer';
+import data from '../../Data'
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Home() {
-  let data = [
-    {
-        img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
-        title: 'Toscana',
-        opis: 'IOSHFDIFSD fsjidkfbsdk sfjndslkfndsjf dsu sdnfuosdhfuidscs sdfniidsucndskj sdfnuisdfnkds csdiuhfcdsk'
-    },
-    {
-        img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
-        title: 'Toscana',
-        opis: 'IOSHFDIFSD fsjidkfbsdk sfjndslkfndsjf dsu sdnfuosdhfuidscs sdfniidsucndskj sdfnuisdfnkds csdiuhfcdsk'
-    },
-    {
-        img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
-        title: 'Toscana',
-        opis: 'IOSHFDIFSD fsjidkfbsdk sfjndslkfndsjf dsu sdnfuosdhfuidscs sdfniidsucndskj sdfnuisdfnkds csdiuhfcdsk'
-    },
-    {
-        img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
-        title: 'Toscana',
-        opis: 'IOSHFDIFSD fsjidkfbsdk sfjndslkfndsjf dsu sdnfuosdhfuidscs sdfniidsucndskj sdfnuisdfnkds csdiuhfcdsk'
-    },
-    {
-        img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
-        title: 'Toscana',
-        opis: 'IOSHFDIFSD fsjidkfbsdk sfjndslkfndsjf dsu sdnfuosdhfuidscs sdfniidsucndskj sdfnuisdfnkds csdiuhfcdsk'
-    },
-    {
-        img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
-        title: 'Toscana',
-        opis: 'IOSHFDIFSD fsjidkfbsdk sfjndslkfndsjf dsu sdnfuosdhfuidscs sdfniidsucndskj sdfnuisdfnkds csdiuhfcdsk'
-    },
-    {
-        img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
-        title: 'Toscana',
-        opis: 'IOSHFDIFSD fsjidkfbsdk sfjndslkfndsjf dsu sdnfuosdhfuidscs sdfniidsucndskj sdfnuisdfnkds csdiuhfcdsk'
-    },
-    {
-        img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
-        title: 'Toscana',
-        opis: 'IOSHFDIFSD fsjidkfbsdk sfjndslkfndsjf dsu sdnfuosdhfuidscs sdfniidsucndskj sdfnuisdfnkds csdiuhfcdsk'
-    },
-    {
-        img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
-        title: 'Toscana',
-        opis: 'IOSHFDIFSD fsjidkfbsdk sfjndslkfndsjf dsu sdnfuosdhfuidscs sdfniidsucndskj sdfnuisdfnkds csdiuhfcdsk'
-    },
-    {
-        img: 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038',
-        title: 'Toscana',
-        opis: 'IOSHFDIFSD fsjidkfbsdk sfjndslkfndsjf dsu sdnfuosdhfuidscs sdfniidsucndskj sdfnuisdfnkds csdiuhfcdsk'
-    }
-]
+  const navigate = useNavigate()
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   return (
     <div className="App">
       <Header />
@@ -86,20 +42,18 @@ function Home() {
       >
             {data.map((movie, i) => {
               return(<SwiperSlide 
-            //     onMouseLeave={(e)=>{
-            //         e.target.classList = "swiper-slide movie"
-            //     }}
-            //   onMouseEnter={(e)=>{
-            //     e.target.classList = "swiper-slide movieHover"
-            //   }} 
+                key={movie.id}
+                onClick={()=>{navigate('/movie/' + movie.id)}}
               className="movie">
-                <img src={movie.img} alt="" />
-                <div className="info">
-                  <p>{movie.title}</p>
-                  <div className="onHover">
-                    <i className="fa fa-play" aria-hidden="true"></i>
-                    <i className="fa fa-plus" aria-hidden="true"></i>
-                    <i className="fa fa-thumbs-up" aria-hidden="true"></i>
+                <div className='movieContent'>
+                  <img src={movie.img} alt="" />
+                  <div className="info">
+                    <p>{movie.title}</p>
+                    <div className="onHover">
+                      <i className="fa fa-play" aria-hidden="true"></i>
+                      <i className="fa fa-plus" aria-hidden="true"></i>
+                      <i className="fa fa-thumbs-up" aria-hidden="true"></i>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>)
@@ -125,20 +79,18 @@ function Home() {
       >
             {data.map((movie, i) => {
               return(<SwiperSlide 
-            //     onMouseLeave={(e)=>{
-            //         e.target.classList = "swiper-slide movie"
-            //     }}
-            //   onMouseEnter={(e)=>{
-            //     e.target.classList = "swiper-slide movieHover"
-            //   }} 
+                key={movie.id}
+                onClick={()=>{navigate('/movie/' + movie.id)}}
               className="movie">
-                <img src={movie.img} alt="" />
-                <div className="info">
-                  <p>{movie.title}</p>  
-                  <div className="onHover">
-                    <i className="fa fa-play" aria-hidden="true"></i>
-                    <i className="fa fa-plus" aria-hidden="true"></i>
-                    <i className="fa fa-thumbs-up" aria-hidden="true"></i>
+                <div className='movieContent'>
+                  <img src={movie.img} alt="" />
+                  <div className="info">
+                    <p>{movie.title}</p>  
+                    <div className="onHover">
+                      <i className="fa fa-play" aria-hidden="true"></i>
+                      <i className="fa fa-plus" aria-hidden="true"></i>
+                      <i className="fa fa-thumbs-up" aria-hidden="true"></i>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>)
@@ -147,6 +99,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

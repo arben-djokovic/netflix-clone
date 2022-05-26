@@ -11,10 +11,6 @@
   z-index: -1 !important;
 }
 
-.appBody {
-  height: 300vh;
-}
-
 .appBody .firstSecreen {
   height: 100vh;
   background: url("https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038");
@@ -73,6 +69,12 @@
 .appBody .secondScreen h2 {
   margin-left: 30px;
   color: white;
+  cursor: pointer;
+  display: inline;
+}
+
+.appBody .secondScreen h2:hover {
+  opacity: .8;
 }
 
 .appBody .secondScreen .listOfMovies .mySwiper {
@@ -83,6 +85,7 @@
 
 .appBody .secondScreen .listOfMovies .mySwiper .movie {
   height: 100px;
+  width: 19vw;
   text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -105,8 +108,13 @@
 }
 
 .appBody .secondScreen .listOfMovies .mySwiper .movie img {
+  max-height: 135px;
   width: 19vw;
   pointer-events: none;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie img:hover {
+  max-height: unset;
 }
 
 .appBody .secondScreen .listOfMovies .mySwiper .movie .info {
@@ -142,10 +150,22 @@
 }
 
 .appBody .secondScreen .listOfMovies .mySwiper .movie:hover {
-  height: 210px;
-  background-color: black;
   z-index: 5;
   padding: 20px 0;
+  overflow: visible;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie:hover .movieContent {
+  background-color: black;
+  height: 250px;
+  width: 260px;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.appBody .secondScreen .listOfMovies .mySwiper .movie:hover img {
+  max-height: unset;
+  width: 100%;
 }
 
 .appBody .secondScreen .listOfMovies .mySwiper .movie:hover .info {

@@ -1,0 +1,60 @@
+.movie .firstScreen {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.movie .firstScreen img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  width: auto;
+  height: 100%;
+}
+
+.movie .firstScreen .text {
+  position: absolute;
+  bottom: 25vh;
+  left: 10vw;
+  width: 40vw;
+  min-width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-gap: 30px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.movie .firstScreen .text h1 {
+  color: yellow;
+}
+
+.movie .firstScreen .text p {
+  font-size: 18px;
+  text-shadow: 1px 1px 50px black;
+}
+
+.movie .firstScreen .text button {
+  font-size: 18px;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 10px;
+  cursor: pointer;
+}
+
+.movie .firstScreen .text button:hover {
+  opacity: .8;
+}
+/*# sourceMappingURL=specificMovieStyle.css.map */

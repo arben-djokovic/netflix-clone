@@ -3,13 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-.swiper-pagination-horizontal{
+.swiper-pagination-horizontal{  
     bottom: 0 !important;
     pointer-events: none !important;
     z-index: -1 !important;
 }
 .appBody{
-    height: 300vh;
     .firstSecreen{
         height: 100vh;
         background: url('https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVfUFPfNXwGMqjYBmWHdXPwTuPQCXtUjHk42OcmbIPllhZIk-nNGh7v4XlqsdAEXpLoJuBoI68W7A2lZV6vgyMxAwk0LWsECavRI.webp?r=038');
@@ -51,6 +50,11 @@
         h2{
             margin-left: 30px;
             color: white;
+            cursor: pointer;
+            display: inline;
+            &:hover{
+                opacity: .8;
+            }
         }
         .listOfMovies{
             .mySwiper{
@@ -59,6 +63,7 @@
                 overflow: visible;
                 .movie{
                     height: 100px;
+                    width: 19vw;
                     text-align: center;
                     align-content: center;
                     justify-content: space-around;
@@ -69,8 +74,12 @@
                         cursor: pointer;
                     }
                     img{
+                        max-height: 135px;
                         width: 19vw;
                         pointer-events: none;
+                        &:hover{
+                            max-height: unset;
+                        }
                     }
                     .info{
                         display: none;
@@ -97,10 +106,20 @@
                         }
                     }
                     &:hover{
-                        height: 210px;
-                        background-color: black;
                         z-index: 5;
                         padding: 20px 0;
+                        overflow: visible;
+                        .movieContent{
+                            background-color: black;
+                            height: 250px;
+                            width: 260px;
+                            position: absolute;
+                            margin-top: 20px;
+                        }
+                        img{
+                            max-height: unset;
+                            width: 100%;
+                        }
                         .info{
                             display: block;
                         }

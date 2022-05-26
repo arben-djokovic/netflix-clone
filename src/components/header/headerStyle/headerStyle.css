@@ -6,7 +6,7 @@
 }
 
 .header {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   z-index: 5;
   width: 100%;
@@ -51,7 +51,7 @@
   font-weight: bold;
   cursor: pointer;
   display: none;
-  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
 }
 
 .header .first .logo {
